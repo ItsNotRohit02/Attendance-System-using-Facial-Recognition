@@ -5,6 +5,8 @@ import numpy as np
 import pandas as pd
 
 
+st.set_page_config(page_title="Face Recognition using Video", page_icon="🎥")
+
 def load_face_encodings():
     df = pd.read_csv('EncodedFaces.csv')
     face_encodings = np.array(df.iloc[:, 0].apply(eval).tolist())
@@ -67,6 +69,7 @@ def main():
                 if name != "Unknown" and name not in recognized_names:
                     recognized_names.add(name)
                     st.write(name)
+    st.caption("Made by Code Knights")
 
 
 if __name__ == '__main__':

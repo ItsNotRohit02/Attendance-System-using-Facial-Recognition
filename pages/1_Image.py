@@ -6,6 +6,8 @@ import pandas as pd
 from PIL import Image
 
 
+st.set_page_config(page_title="Face Recognition using Image", page_icon="📷")
+
 def load_face_encodings():
     df = pd.read_csv('EncodedFaces.csv')
     face_encodings = np.array(df.iloc[:, 0].apply(eval).tolist())
@@ -56,6 +58,7 @@ def main():
         for name in face_labels:
             if name != 'Unknown':
                 st.write(name)
+    st.caption("Made by Code Knights")
 
 
 if __name__ == '__main__':
